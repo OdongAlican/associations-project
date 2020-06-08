@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar {
+     width: 100%;
+     height: 40px;
+     top: 0;
+     background-color: #449;
+ }
+
+ .button-light {
+     text-decoration: none;
+     font-size: 14px;
+     font-weight: bold;
+     float: right;
+     width: 60px;
+     height: 30px;
+     background-color: #fff;
+     text-align: center;
+     align-items: center;
+
+ }
