@@ -10,13 +10,15 @@
   </head>
 
   <body>
-  <nav class="navbar">
-  <div class="navbar-menu">
-        <p>
-          <%= link_to "Logout", logout_path, method: :delete, class: "button-light" %>
-        </p>    
-  </div>
-</nav>
+  <% if logged_in? %>
+    <nav class="navbar">
+      <div class="navbar-menu">
+          <p>
+            <%= link_to "Logout", logout_path, method: :delete, class: "button-light" %>
+          </p>    
+      </div>
+    </nav>
+  <% end %>
     <%= yield %>
   </body>
 </html>
