@@ -1,0 +1,17 @@
+<%= form_for(:session, :html => {local: true}, url: login_path) do |form| %>
+  
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password, autocomplete: "off" %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "Login" %>
+    </div>
+  <% end %>
+  
