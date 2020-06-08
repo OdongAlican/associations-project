@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# associations-project
+>>>>>>> 956ad79f90cc7f7858cfc0c8f0d5b6e70e333c23
