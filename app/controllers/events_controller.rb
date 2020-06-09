@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   
     def create
       @event = Event.new(event_params)
-  
+      @event.creator = current_user
       respond_to do |format|
         if @event.save
           format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -55,7 +55,7 @@ class EventsController < ApplicationController
       end
   
       def event_params
-        params.require(:event).permit(:name, :email, :password_digest)
+        params.require(:event).permit(:location, :event_date)
       end
   end
   
