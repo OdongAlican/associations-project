@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
     before_action :set_event, only: [:show, :edit, :update, :destroy]
+    before_action :authorize, only: [:new, :create]
   
     def index
       @events = Event.all
@@ -16,8 +17,9 @@ class EventsController < ApplicationController
     end
   
     def create
-      @event = Event.new(event_params)
-      @event.creator = current_user
+      # @event = Event.new(event_params)
+      # @event.creator = current_user
+      @event = current_user.created_events.build(event_params)
       respond_to do |format|
         if @event.save
           format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -56,6 +58,10 @@ class EventsController < ApplicationController
   
       def event_params
         params.require(:event).permit(:location, :event_date)
+      end
+
+      def authorize
+        redirect_to root_path if current_user.nil?
       end
   end
   
