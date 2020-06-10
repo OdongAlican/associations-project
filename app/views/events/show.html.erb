@@ -15,5 +15,13 @@
   <%= @event.creator.name %>
 </p>
 
+<div>
+  <%= render "attendorm" %>
+</div>
+
+<div>
+  <%= render "attendees" %>
+</div>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

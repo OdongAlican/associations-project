@@ -13,13 +13,13 @@
 <table>
   <thead>
     <tr>
-      <th>Articles</th>
+      <th>Events</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @user.created_events.each do |event| %>
+    <% @user.attended_events.each do |event| %>
       <tr>
         <td><%= event.location %></td>
         <td><%= event.event_date %></td>
